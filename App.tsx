@@ -1,5 +1,14 @@
+import {
+  initialWindowMetrics,
+  SafeAreaProvider,
+} from "react-native-safe-area-context";
+
 import { HomeScreen } from "./src/screens/HomeScreen";
 
 export const App = () => {
-  return <HomeScreen />;
+  return (
+    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+      <HomeScreen />
+    </SafeAreaProvider>
+  );
 };
