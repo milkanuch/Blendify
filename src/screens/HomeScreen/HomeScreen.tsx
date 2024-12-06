@@ -1,11 +1,13 @@
-import { View, Text } from "react-native";
+import { Text } from "react-native";
+
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import { styles } from "./homeScreen.styles";
 
 export const HomeScreen = () => {
   return (
-    <View style={styles.screen}>
+    <SafeAreaView style={styles.screen}>
       <Text>Hello There</Text>
-    </View>
+    </SafeAreaView>
   );
 };
