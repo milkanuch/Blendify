@@ -1,9 +1,5 @@
-import { Text, View } from "react-native";
+import { HomeScreen } from "./src/screens/HomeScreen";
 
 export const App = () => {
-  return (
-    <View>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
+  return <HomeScreen />;
 };
