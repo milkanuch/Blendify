@@ -3,7 +3,7 @@ import { useState } from "react";
 import { LinearGradient, LinearGradientProps } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { Button } from "../../components/Button";
+import { Button } from "components/Button";
 
 import { generateGradient } from "./homeScreen.helpers";
 

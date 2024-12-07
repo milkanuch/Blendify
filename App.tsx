@@ -4,8 +4,9 @@ import {
   SafeAreaProvider,
 } from "react-native-safe-area-context";
 
-import { HomeScreen } from "./src/screens/HomeScreen";
-import { styles } from "./src/shared/styles";
+import { HomeScreen } from "screens/HomeScreen";
+
+import { styles } from "shared/styles";
 
 export const App = () => {
   return (
