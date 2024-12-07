@@ -5,7 +5,7 @@ import { LinearGradient, LinearGradientProps } from "expo-linear-gradient";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { generateRandomColor } from "../../helpers/colors";
+import { generateGradient } from "./homeScreen.helpers";
 
 import { styles } from "./homeScreen.styles";
 
@@ -15,10 +15,7 @@ export const HomeScreen = () => {
   >(["transparent", "transparent"]);
 
   const handleGenerateRandomColor = () => {
-    const randomColor = generateRandomColor();
-    const secondRandomColor = generateRandomColor();
-
-    setBackgroundColor([randomColor, secondRandomColor]);
+    setBackgroundColor(generateGradient());
   };
 
   return (
