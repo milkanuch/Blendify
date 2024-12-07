@@ -1,6 +1,7 @@
 import { forwardRef, useMemo } from "react";
 
 import { BottomSheetModal, BottomSheetScrollView } from "@gorhom/bottom-sheet";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import { ModalBackdrop } from "components/ModalBackdrop/ModalBackdrop";
 
@@ -42,9 +43,14 @@ export const GradientPickerModal = forwardRef<
       ref={ref}
       snapPoints={snapPoints}
     >
-      <BottomSheetScrollView style={styles.container}>
-        {gradientList.map(renderItem)}
-      </BottomSheetScrollView>
+      <SafeAreaView edges={["bottom"]} style={styles.modal}>
+        <BottomSheetScrollView
+          showsVerticalScrollIndicator={false}
+          style={styles.container}
+        >
+          {gradientList.map(renderItem)}
+        </BottomSheetScrollView>
+      </SafeAreaView>
     </BottomSheetModal>
   );
 });

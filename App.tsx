@@ -12,11 +12,11 @@ import { styles } from "shared/styles";
 export const App = () => {
   return (
     <GestureHandlerRootView style={styles.root}>
-      <BottomSheetModalProvider>
-        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+        <BottomSheetModalProvider>
           <HomeScreen />
-        </SafeAreaProvider>
-      </BottomSheetModalProvider>
+        </BottomSheetModalProvider>
+      </SafeAreaProvider>
     </GestureHandlerRootView>
   );
 };
