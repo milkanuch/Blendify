@@ -2,8 +2,8 @@ import { LinearGradientProps } from "expo-linear-gradient";
 
 import { generateRandomColor } from "../../helpers/colors";
 
-const MAX_COLORS_LENGTH = 5;
 const MIN_COLORS_LENGTH = 2;
+const MAX_COLORS_LENGTH = 5;
 
 export const generateGradient = (): LinearGradientProps["colors"] => {
   const colorLength = Math.max(

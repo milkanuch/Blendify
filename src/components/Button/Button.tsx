@@ -1,19 +1,34 @@
 import { FC } from "react";
-import { Text } from "react-native";
+import { Text, Pressable } from "react-native";
 
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { LinearGradient } from "expo-linear-gradient";
+
+import { GRADIENT_END } from "./button.constants";
 
 import { ButtonProps } from "./button.types";
 
 export const Button: FC<ButtonProps> = ({
   label,
   style,
+  gradientColors,
+  labelStyle,
+  gradientStyle,
   onPress: handleButtonPress,
   ...rest
 }) => {
   return (
-    <TouchableOpacity onPress={handleButtonPress} style={style} {...rest}>
-      {!!label && <Text style={style}>{label}</Text>}
-    </TouchableOpacity>
+    <Pressable onPress={handleButtonPress} style={style} {...rest}>
+      {gradientColors ? (
+        <LinearGradient
+          colors={gradientColors}
+          end={GRADIENT_END}
+          style={gradientStyle}
+        >
+          <Text style={labelStyle}>{label}</Text>
+        </LinearGradient>
+      ) : (
+        <Text>{label}</Text>
+      )}
+    </Pressable>
   );
 };

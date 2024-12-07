@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { Text } from "react-native";
 
 import { LinearGradient, LinearGradientProps } from "expo-linear-gradient";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { Button } from "../../components/Button";
@@ -17,13 +15,22 @@ export const HomeScreen = () => {
   >(["transparent", "transparent"]);
 
   const handleGenerateRandomColor = () => {
-    setBackgroundColor(generateGradient());
+    const gradient = generateGradient();
+
+    setBackgroundColor(gradient);
   };
 
   return (
     <SafeAreaView style={styles.screen}>
-      <LinearGradient colors={backgroundColor} style={styles.container} />
-      <Button label="Hello There" onPress={handleGenerateRandomColor} />
+      <LinearGradient colors={backgroundColor} style={styles.background} />
+      <Button
+        gradientColors={backgroundColor}
+        gradientStyle={styles.buttonGradient}
+        label="Hello There"
+        labelStyle={styles.buttonLabel}
+        onPress={handleGenerateRandomColor}
+        style={styles.buttonContainer}
+      />
     </SafeAreaView>
   );
 };
