@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
   },
   buttonGradient: {
-    borderColor: "#2c2b2b",
     borderRadius: 8,
     borderWidth: 2,
     paddingVertical: 16,
