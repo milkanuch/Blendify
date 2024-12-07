@@ -2,6 +2,8 @@ import { forwardRef, useMemo } from "react";
 
 import { BottomSheetModal, BottomSheetScrollView } from "@gorhom/bottom-sheet";
 
+import { ModalBackdrop } from "components/ModalBackdrop/ModalBackdrop";
+
 import { Gradient } from "screens/HomeScreen/homeScreen.types";
 
 import { GradientPickerItem } from "./GradientPickerItem/GradientPickerItem";
@@ -27,6 +29,7 @@ export const GradientPickerModal = forwardRef<
         gradientColors={colors}
         gradientIndex={index}
         isSelected={isSelected}
+        key={index}
         onPress={handleGradientPress}
       />
     );
@@ -34,6 +37,7 @@ export const GradientPickerModal = forwardRef<
 
   return (
     <BottomSheetModal
+      backdropComponent={ModalBackdrop}
       enableDynamicSizing={false}
       ref={ref}
       snapPoints={snapPoints}
