@@ -1,9 +1,18 @@
-import { Text, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import {
+  initialWindowMetrics,
+  SafeAreaProvider,
+} from "react-native-safe-area-context";
+
+import { HomeScreen } from "./src/screens/HomeScreen";
+import { styles } from "./src/shared/styles";
 
 export const App = () => {
   return (
-    <View>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <GestureHandlerRootView style={styles.root}>
+      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+        <HomeScreen />
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 };
