@@ -26,6 +26,11 @@ export const styles = StyleSheet.create({
     fontWeight: "600",
     textAlign: "center",
   },
+  buttonSubtitle: {
+    fontSize: 14,
+    marginTop: 8,
+    textAlign: "center",
+  },
   screen: {
     flex: 1,
     paddingHorizontal: HORIZONTAL_PADDING,

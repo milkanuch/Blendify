@@ -7,4 +7,6 @@ export type ButtonProps = TouchableOpacityProps & {
   gradientColors?: LinearGradientProps["colors"];
   gradientStyle?: LinearGradientProps["style"];
   labelStyle?: TextStyle;
+  subtitle?: string;
+  subtitleStyle?: TextStyle;
 };

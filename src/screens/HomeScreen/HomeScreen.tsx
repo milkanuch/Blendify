@@ -51,6 +51,8 @@ export const HomeScreen = () => {
         onLongPress={handleOpenGradientPicker}
         onPress={handleGenerateRandomColor}
         style={styles.buttonContainer}
+        subtitle="Tap anywhere on the screen to blend random colors, or press and hold to choose colors from our library. Have fun!"
+        subtitleStyle={styles.buttonSubtitle}
       />
       <GradientPickerModal
         activeIndex={activeIndex}
