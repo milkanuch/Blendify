@@ -1,3 +1,4 @@
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import {
   initialWindowMetrics,
@@ -11,9 +12,11 @@ import { styles } from "shared/styles";
 export const App = () => {
   return (
     <GestureHandlerRootView style={styles.root}>
-      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-        <HomeScreen />
-      </SafeAreaProvider>
+      <BottomSheetModalProvider>
+        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+          <HomeScreen />
+        </SafeAreaProvider>
+      </BottomSheetModalProvider>
     </GestureHandlerRootView>
   );
 };
