@@ -1,9 +1,10 @@
 import { forwardRef, useMemo } from "react";
-import { Pressable, Text } from "react-native";
 
-import { BottomSheetModal, BottomSheetView } from "@gorhom/bottom-sheet";
+import { BottomSheetModal, BottomSheetScrollView } from "@gorhom/bottom-sheet";
 
 import { Gradient } from "screens/HomeScreen/homeScreen.types";
+
+import { GradientPickerItem } from "./GradientPickerItem/GradientPickerItem";
 
 import { styles } from "./gradientPickerModal.styles";
 import { GradientPickerModalProps } from "./gradientPickerModal.types";
@@ -11,26 +12,35 @@ import { GradientPickerModalProps } from "./gradientPickerModal.types";
 export const GradientPickerModal = forwardRef<
   BottomSheetModal,
   GradientPickerModalProps
->(({ gradientList, onGradientSelect }, ref) => {
+>(({ gradientList, onGradientSelect, activeIndex }, ref) => {
   const snapPoints = useMemo(() => ["80%"], []);
 
   const renderItem = (colors: Gradient, index: number) => {
+    const isSelected = activeIndex === index;
+
     const handleGradientPress = () => {
       onGradientSelect(index);
     };
 
     return (
-      <Pressable key={index} onPress={handleGradientPress}>
-        <Text>{`Gradient ${colors[0]}`}</Text>
-      </Pressable>
+      <GradientPickerItem
+        gradientColors={colors}
+        gradientIndex={index}
+        isSelected={isSelected}
+        onPress={handleGradientPress}
+      />
     );
   };
 
   return (
-    <BottomSheetModal ref={ref} snapPoints={snapPoints}>
-      <BottomSheetView style={styles.container}>
+    <BottomSheetModal
+      enableDynamicSizing={false}
+      ref={ref}
+      snapPoints={snapPoints}
+    >
+      <BottomSheetScrollView style={styles.container}>
         {gradientList.map(renderItem)}
-      </BottomSheetView>
+      </BottomSheetScrollView>
     </BottomSheetModal>
   );
 });

@@ -53,6 +53,7 @@ export const HomeScreen = () => {
         style={styles.buttonContainer}
       />
       <GradientPickerModal
+        activeIndex={activeIndex}
         gradientList={gradientList}
         onGradientSelect={handleSelectGradient}
         ref={gradientPickerRef}
