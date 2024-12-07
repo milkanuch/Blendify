@@ -14,6 +14,8 @@ export const Button: FC<ButtonProps> = ({
   label,
   style,
   gradientColors,
+  subtitle,
+  subtitleStyle,
   labelStyle,
   gradientStyle,
   onPress: handleButtonPress,
@@ -36,6 +38,9 @@ export const Button: FC<ButtonProps> = ({
       ) : (
         <Text>{label}</Text>
       )}
+      {subtitle ? (
+        <Text style={[styles.label, subtitleStyle]}>{subtitle}</Text>
+      ) : null}
     </Pressable>
   );
 };
