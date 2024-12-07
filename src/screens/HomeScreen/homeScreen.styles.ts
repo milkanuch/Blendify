@@ -1,9 +1,11 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
-  screen: {
-    alignItems: "center",
-    flex: 1,
-    justifyContent: "center",
-  },
-});
+export const styleSheet = (backgroundColor: string) =>
+  StyleSheet.create({
+    screen: {
+      alignItems: "center",
+      backgroundColor,
+      flex: 1,
+      justifyContent: "center",
+    },
+  });
