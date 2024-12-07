@@ -41,13 +41,13 @@ npm run android   # For Android
 🎯 Tap to Generate a Gradient
 Users can tap anywhere on the screen to blend a random gradient.
 
-<video src="./videos/tap.mp4" controls></video>  
+![tap](./videos/tap.gif)  
 
 
 🎨 Pick Colors from the Modal
 Access a bottom-sheet modal to choose specific colors from a generated blend list.
 
-<video src="./videos/modal.mp4" controls></video>  
+![modal](./videos/modal.gif) 
 
 
 Enjoy creating your gradients! 🌈✨
